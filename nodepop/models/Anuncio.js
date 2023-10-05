@@ -5,9 +5,10 @@ const mongoose = require('mongoose');
 // Modelo
 
 const anuncioSchema = mongoose.Schema({
-    nombre: String,
+    nombre: { type: String, index: true },
+    
     venta: Boolean,
-    precio: Number,
+    precio: Number, 
     foto: String,
     tags: [String]
 });
