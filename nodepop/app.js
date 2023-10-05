@@ -4,9 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -17,25 +14,58 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// Conectamos a la Base de Datos
+require('./lib/connectDB');
+
+// Cargamos el modelo
+require('./models/Anuncio');
+
+/**
+ * Rutas del API
+ */
+app.use('/api/anuncios', require('./routes/api/anuncios'));
+
+/**
+ * Rutas del website
+ */
+app.use('/anuncios', require('./routes/anuncios'));
+
+app.use('/', require('./routes/index'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
+    // comprobar si es un error de validación
+    if (err.array) {
+      const errorInfo = err.errors[0]; // err.array({ onlyFirstError: true })[0]
+      console.log(errorInfo)
+      err.message = `Error en ${errorInfo.location}, parámetro ${errorInfo.path} ${errorInfo.msg}`;
+      err.status = 422;
+    }
+  
+    res.status(err.status || 500);
+  
+    // si lo que ha fallado es una petición al API
+    // responder con un error en formato JSON
+    if (req.originalUrl.startsWith('/api/')) {
+      res.json({ error: err.message });
+      return;
+    }
+  
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+  
+    // render the error page
+    res.render('error');
+  });
+  
+  module.exports = app;
