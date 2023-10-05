@@ -11,7 +11,7 @@
             <% anunciosResult.forEach(function(anuncio){%>
                 <% if(anuncio.venta) { %>
                     <div class="card bg-light border-secondary">
-                        <%- include('./anuncio_', {title:anuncio}) %>
+                        <%- include('./anuncio_info', {anuncio:anuncio}) %>
                     </div>
                 <% }; %>
             <%})%>
@@ -23,7 +23,9 @@
         <div class="card-columns">
             <% anunciosResult.forEach(function(anuncio){%>
                 <% if(!anuncio.venta) { %>
-                    
+                    <div class="card bg-light border-secondary">
+                        <%- include('./anuncio', {anuncio:anuncio}) %>
+                    </div>
                 <% }; %>
             <%})%>
         </div>
