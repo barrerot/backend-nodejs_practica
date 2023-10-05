@@ -1,0 +1,10 @@
+<img src="images/anuncios/<%- anuncio.foto %>" class="card-img-top">
+<div class="card-body">
+    <h5 ><%= anuncio.nombre %></h5>
+    Precio:<%= anuncio.precio %>€
+</div>
+<div class="card-footer">
+    <% anuncio.tags.forEach(function(tag){%>
+        <span class="badge badge-light"><%= tag %></span>
+    <%});%>
+</div>

@@ -1,8 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.breadcrumb {
+    margin-top: 2rem;
 }
 
-a {
-  color: #00B7FF;
+.header-text {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+img.node {
+    display: block;
+    margin: 0 auto;
+    height: 7rem
+}
+
+card-img-top{
+
+    width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+
+card-body{
+-ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.card-columns {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 1.25rem;
+  -moz-column-gap: 1.25rem;
+  column-gap: 1.25rem;
+  orphans: 1;
+  widows: 1;
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}
+
+.container {
+  max-width: 1140px;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+.navbar-text {
+  display: inline-block;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
 }
