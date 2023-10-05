@@ -1,0 +1,45 @@
+{
+    "anuncios": [{
+            "nombre": "Moto agua yamaha gp 1300R 2008",
+            "venta": true,
+            "precio": 1500,
+            "foto": "motoagua.jpg",
+            "tags": ["lifestyle", "motor"]
+        },
+        {
+            "nombre": "Barco / Motora / cruiser - Arcoa 1075 Fly",
+            "venta": false,
+            "precio": 47.000,
+            "foto": "barco.jpg",
+            "tags": ["lifestyle", "motor"]
+        },
+        {
+            "nombre": "Ipad Pro 12,9 pulgadas 512Gb Plata",
+            "venta": true,
+            "precio": 1000,
+            "foto": "ipad_pro.jpg",
+            "tags": ["lifestyle", "work","tech"]
+        },
+        {
+            "nombre": "Negra TUMI Brief Pack ALPHA 3",
+            "venta": true,
+            "precio": 275.00,
+            "foto": "mochila.jpg",
+            "tags": ["lifestyle", "work"]
+        },
+        {
+            "nombre": "Collar de ónix",
+            "venta": true,
+            "precio": 75.00,
+            "foto": "collar.jpg",
+            "tags": ["lifestyle", "joyeria"]
+        },
+        {
+            "nombre": "pulsera Pandora",
+            "venta": true,
+            "precio": 1300.00,
+            "foto": "pulsera.jpg",
+            "tags": ["lifestyle", "joyeria"]
+        }
+    ]
+}
