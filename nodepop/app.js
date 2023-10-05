@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Conectamos a la Base de Datos
+// Conexión a la Base de Datos
 require('./lib/connectDB');
 
 // Cargamos el modelo

@@ -13,20 +13,20 @@ img.node {
     height: 7rem
 }
 
-card-img-top{
+item-img-top{
 
     width: 100%;
   border-top-left-radius: calc(.25rem - 1px);
   border-top-right-radius: calc(.25rem - 1px);
 }
 
-card-body{
+item-body{
 -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
 }
 
-.card-columns {
+.item-columns {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;

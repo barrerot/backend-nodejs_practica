@@ -7,7 +7,7 @@
         <nav class="breadcrumb">
             <h3>Productos en Venta</h3>
         </nav>
-        <div class="card-columns">
+        <div class="item-columns">
             <% anunciosResult.forEach(function(anuncio){%>
                 <% if(anuncio.venta) { %>
                     <div class="card bg-light border-secondary">
@@ -20,7 +20,7 @@
         <nav class="breadcrumb">
             <h3>Productos en Búsqueda</h3>
         </nav>
-        <div class="card-columns">
+        <div class="item-columns">
             <% anunciosResult.forEach(function(anuncio){%>
                 <% if(!anuncio.venta) { %>
                     <div class="card bg-light border-secondary">
