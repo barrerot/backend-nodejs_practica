@@ -28,8 +28,9 @@ In development:<br>
 <h2>Parámetros de consulta</h2>
 Cualquier solicitud de acceso a los anuncios almacenados puede efectuarse a través de dos métodos diferentes:
 
-Realizar consultas directas mediante una URL, lo que resultará en una página con los anuncios filtrados.
-Realizar consultas a la API como un servicio, lo que generará un archivo JSON como respuesta.
+- Realizar consultas directas mediante una URL, lo que resultará en una página con los anuncios filtrados.
+
+- Realizar consultas a la API como un servicio, lo que generará un archivo JSON como respuesta.
 Ambas vías de consulta admiten los mismos parámetros. Un ejemplo de consulta seria:
 
 <code>
@@ -52,8 +53,74 @@ Por ejemplo http://localhost:3000/api/anuncios?type=venta&tags=lifestyle
 devuelve:
 
 
+
 <code>
-{"success":true,"result":[{"_id":"651c3fffe8392d5b2a747419","nombre":"Moto agua yamaha gp 1300R 2008","venta":true,"precio":1500,"foto":"motoagua.jpg","tags":["lifestyle","motor"],"__v":0},{"_id":"651c3fffe8392d5b2a74741b","nombre":"Ipad Pro 12,9 pulgadas 512Gb Plata","venta":true,"precio":1000,"foto":"ipad_pro.jpg","tags":["lifestyle","work","tech"],"__v":0},{"_id":"651c3fffe8392d5b2a74741c","nombre":"Negra TUMI Brief Pack ALPHA 3","venta":true,"precio":275,"foto":"mochila.jpg","tags":["lifestyle","work"],"__v":0},{"_id":"651c3fffe8392d5b2a74741d","nombre":"Collar de ónix","venta":true,"precio":75,"foto":"collar.jpg","tags":["lifestyle","joyeria"],"__v":0},{"_id":"651c3fffe8392d5b2a74741e","nombre":"pulsera Pandora","venta":true,"precio":1300,"foto":"pulsera.jpg","tags":["lifestyle","joyeria"],"__v":0}]}
+    {
+        "success": true,
+        "result": [
+          {
+            "_id": "65202bb53d346504054e3822",
+            "nombre": "Moto agua yamaha gp 1300R 2008",
+            "venta": true,
+            "precio": 1500,
+            "foto": "motoagua.jpg",
+            "tags": [
+              "lifestyle",
+              "motor"
+            ],
+            "__v": 0
+          },
+          {
+            "_id": "65202bb53d346504054e3824",
+            "nombre": "Ipad Pro 12,9 pulgadas 512Gb Plata",
+            "venta": true,
+            "precio": 1000,
+            "foto": "ipad_pro.jpg",
+            "tags": [
+              "lifestyle",
+              "work",
+              "tech"
+            ],
+            "__v": 0
+          },
+          {
+            "_id": "65202bb53d346504054e3825",
+            "nombre": "Negra TUMI Brief Pack ALPHA 3",
+            "venta": true,
+            "precio": 275,
+            "foto": "mochila.jpg",
+            "tags": [
+              "lifestyle",
+              "work"
+            ],
+            "__v": 0
+          },
+          {
+            "_id": "65202bb53d346504054e3826",
+            "nombre": "Collar de ónix",
+            "venta": true,
+            "precio": 75,
+            "foto": "collar.jpg",
+            "tags": [
+              "lifestyle",
+              "joyeria"
+            ],
+            "__v": 0
+          },
+          {
+            "_id": "65202bb53d346504054e3827",
+            "nombre": "pulsera Pandora",
+            "venta": true,
+            "precio": 1300,
+            "foto": "pulsera.jpg",
+            "tags": [
+              "lifestyle",
+              "joyeria"
+            ],
+            "__v": 0
+          }
+        ]
+      }
 </code>
 
 <h2>POST /api/anuncios/</h2>
@@ -61,6 +128,7 @@ Introduce un nuevo artículo
 hay que pasarle los datos en el body con formatodata-urlencode
 
 ejemplo de un curl 
+<code>
 curl --location 'http://localhost:3000/api/anuncios' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'nombre=Bicicleta' \
@@ -68,6 +136,7 @@ curl --location 'http://localhost:3000/api/anuncios' \
 --data-urlencode 'precio=230.15' \
 --data-urlencode 'foto=bici.jpg' \
 --data-urlencode 'tags=["lifestyle", "motor"]'
+</code>
 
 
 Devuelve un JSON con el anuncio insertado
