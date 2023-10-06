@@ -22,7 +22,7 @@ Load initial data:
 
 ```sh
 # this command deletes all the data in the database and create default data
-$ npm run install-db
+$ npm run init-db
 ```
 
 ## Start
